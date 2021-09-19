@@ -1,0 +1,1 @@
+Vocabulario noruego ingles

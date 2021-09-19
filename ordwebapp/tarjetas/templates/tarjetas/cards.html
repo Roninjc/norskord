@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn norwegian vocabulary</title>
+    
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'tarjetas/css/clear.css' %}">
+    <script src="{% static 'tarjetas/js/tarjetas.js' %}" defer></script>
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle"/>
+    <nav>
+        <ul>
+            <li class="horizontal home"><a href="{% url 'welcome' %}">Home</a></li>
+            <li class="horizontal home"><a href="{% url 'index' %}">Games</a></li>
+            <label for="theme-toggle" class="horizontal theme" id="theme-btn">
+                <img src="{% static 'tarjetas/images/moon.svg' %}" id="img-darktheme">
+                <img src="{% static 'tarjetas/images/sun.svg' %}" id="img-lighttheme">
+            </label>
+            <li class="horizontal"><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="horizontal"><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="{% url 'cards' %}" class="button card">
+            <h1>{{ word }}</h1>
+        
+            <h3>{{ translation }}</h3>
+        </a>
+    </main>
+</body>
+</html>

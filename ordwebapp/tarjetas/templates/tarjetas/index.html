@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn norwegian vocabulary</title>
+
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'tarjetas/css/clear.css' %}">
+    <script src="{% static 'tarjetas/js/tarjetas.js' %}" defer></script>
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle"/>
+
+    <nav>
+        <ul id="navBar">
+            <li class="horizontal home"><a href="{% url 'welcome' %}">Home</a></li>
+            <li class="horizontal home"><a class="active" href="{% url 'index' %}">Games</a></li>
+            <label for="theme-toggle" class="horizontal theme" id="theme-btn">
+                <img src="{% static 'tarjetas/images/moon.svg' %}" id="img-darktheme">
+                <img src="{% static 'tarjetas/images/sun.svg' %}" id="img-lighttheme">
+            </label>
+            <li class="horizontal"><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="horizontal"><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="{% url 'cards' %}" class="button en">Cards</a>
+        <a href="{% url 'sidedown' %}" class="button to">Side down</a>
+        <a href="{% url 'writit' %}" class="button tre">Write it</a>
+    </main>
+</body>
+</html>
